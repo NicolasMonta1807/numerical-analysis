@@ -20,22 +20,22 @@ def main():
     filename = sys.argv[1]
     A = read_matrix(filename)
 
-    print("Ingrese el vector a resolver:")
+    print("Input solution vector 'b':")
     input_vector = input()
     b = np.array(input_vector.split(",")).astype(np.float64)
 
     P, L, U = plu.plu_decomposition(A)
 
     if verbose:
-        print("Matriz P transpuesta:")
+        print("P-Transposed:")
         print(P.T)
-        print("Matriz L:")
+        print("L:")
         print(L)
-        print("Matriz U:")
+        print("U:")
         print(U)
 
     x = plu.solve_plu(P, L, U, b)
-    print("La solución es:")
+    print("Solution:")
     print(x)
 
 
